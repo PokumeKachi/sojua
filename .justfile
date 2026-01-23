@@ -1,14 +1,19 @@
 _default:
     @just --choose
 
+ARGS := "--features bevy/dynamic_linking"
+
+build-release:
+    cargo build --release --no-default-features
+
 build: develop
-    cargo build
+    cargo build {{ARGS}}
 
 run: develop
-    cargo run
+    cargo run { { ARGS } }
 
 watch: develop
-    cargo watch -x run
+    cargo watch -x run { { ARGS } }
 
 todo:
     taskwarrior-tui --taskdata .task
