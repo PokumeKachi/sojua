@@ -12,10 +12,15 @@
                 let
                     pkgs = import nixpkgs { inherit system; };
                     libs = with pkgs; [
-                        libxkbcommon
                         alsa-lib
+
+                        vulkan-loader
+                        vulkan-tools
+                        libxkbcommon
+
                         wayland
-                        systemdLibs
+
+                        libudev-zero
                     ];
                     tools = with pkgs; [
                         pkg-config
