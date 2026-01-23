@@ -10,10 +10,10 @@ build: develop
     cargo build {{ARGS}}
 
 run: develop
-    cargo run { { ARGS } }
+    cargo run {{ARGS}}
 
 watch: develop
-    cargo watch -x run { { ARGS } }
+    cargo watch -x run {{ARGS}}
 
 todo:
     taskwarrior-tui --taskdata .task
