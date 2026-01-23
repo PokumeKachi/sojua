@@ -12,10 +12,14 @@
                 let
                     pkgs = import nixpkgs { inherit system; };
                     libs = with pkgs; [
+                        libxkbcommon
+                        alsa-lib
                         wayland
+                        systemdLibs
                     ];
                     tools = with pkgs; [
                         pkg-config
+                        mold
                     ];
                     common = {
                         buildInputs = libs;
